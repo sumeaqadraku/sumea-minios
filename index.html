@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SumeaShell</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="terminal-body">
+            <div class="terminal-output">
+                <p><span class="prompt">C:\Users\Admin&gt;</span> Sumea@mini-os:~$.</p>
+                <p><span class="prompt">C:\Users\Admin&gt;</span> Type '!help' to see available commands.</p>
+            </div>
+            <input type="text" id="command-input" class="command-input" onkeydown="processCommand(event)" placeholder="C:\Users\Admin&gt;">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
