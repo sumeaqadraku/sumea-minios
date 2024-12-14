@@ -83,9 +83,18 @@ function processCommand(event) {
             addTerminalOutput("!clock: The current time is: " + new Date().toLocaleTimeString());
         } else if (command === "!shutdown") {
             addTerminalOutput("!shutdown: Shutting down terminal... System going offline... Goodbye! 👋");
-            setTimeout(() => {
-                location.reload(); // Simulate reload (shutdown)
-            }, 2000);
+    // Simulate a shutdown by fading out the terminal
+    const terminalBody = document.querySelector(".terminal-body");
+    
+    // Add a shutdown animation class
+    terminalBody.style.transition = "opacity 2s ease-out"; // Fade effect
+    terminalBody.style.opacity = 0; // Start fading out
+    
+    // After a short delay, reload the page or show a shutdown screen
+    setTimeout(() => {
+        location.reload(); // Reload the page to simulate the terminal shutting down
+    }, 2000); // Wait for the fade-out effect to finish
+
         } else {
             addTerminalOutput(`Command '${command}' not found. Type !help for a list of commands.`);
         }
